@@ -16,7 +16,7 @@ describe('Controller: NavigationCtrl', function () {
         });
     }));
 
-    it('should attach a list of awesomeThings to the scope', function () {
+    it('should attach a list of tabs and navType to the scope', function () {
         expect(typeof scope.tabs).toBeDefined();
         expect(scope.tabs.length).toBe(5);
         expect(scope.navType).toBe('pills');

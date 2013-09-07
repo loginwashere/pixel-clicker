@@ -1,22 +1,22 @@
 'use strict';
 
-describe('Controller: StatsCtrl', function () {
+describe('Controller: UpdatesCtrl', function () {
 
     // load the controller's module
     beforeEach(module('clientApp'));
 
-    var StatsCtrl,
+    var UpdatesCtrl,
         scope;
 
     // Initialize the controller and a mock scope
     beforeEach(inject(function ($controller, $rootScope) {
         scope = $rootScope.$new();
-        StatsCtrl = $controller('StatsCtrl', {
+        UpdatesCtrl = $controller('UpdatesCtrl', {
             $scope: scope
         });
     }));
 
-    it('should attach a list of awesomeThings to the scope', function () {
-        expect(scope.content).toBe('Stats');
+    it('should attach content to the scope', function () {
+        expect(scope.content).toBe('Updates');
     });
 });

@@ -16,8 +16,16 @@ describe('Controller: MainCtrl', function () {
         });
     }));
 
-    it('should attach a list of awesomeThings to the scope', function () {
+    it('should attach app title and numberOfClicks to the scope', function () {
         expect(scope.title).toBeDefined();
         expect(scope.title).toBe('Pixel Clicker');
+
+        expect(scope.numberOfClicks).toBeDefined();
+        expect(scope.numberOfClicks).toBe(0);
+    });
+
+    it('should increment numberOfClicks when click method called', function () {
+        scope.click();
+        expect(scope.numberOfClicks).toBe(1);
     });
 });
