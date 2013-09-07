@@ -10,11 +10,5 @@ angular.module('clientApp')
             {title: "About", content: "views/navigation/about.html"}
         ];
 
-        $scope.alertMe = function () {
-            setTimeout(function () {
-                alert("You've selected the alert tab!");
-            });
-        };
-
         $scope.navType = 'pills';
     }]);
