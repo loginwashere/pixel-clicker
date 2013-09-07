@@ -1,12 +1,16 @@
 'use strict';
 
 angular.module('clientApp')
-    .controller('MainCtrl', ['$scope', function ($scope) {
+    .controller('MainCtrl', ['$scope', 'game', function ($scope, game) {
         $scope.title = 'Pixel Clicker';
 
-        $scope.numberOfClicks = 0;
+        game.init();
 
-        $scope.click = function(){
-            $scope.numberOfClicks++;
-        };
+        $scope.clock = game.getClock();
+
+        game.loop($scope);
+
+        $scope.numberOfClicks = game.getNumberOfClicks();
+
+        $scope.click = game.clickPixel($scope);
     }]);

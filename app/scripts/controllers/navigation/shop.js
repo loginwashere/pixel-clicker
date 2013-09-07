@@ -1,6 +1,8 @@
 'use strict';
 
 angular.module('clientApp')
-    .controller('ShopCtrl', ['$scope', function ($scope) {
+    .controller('ShopCtrl', ['$scope', 'game', function ($scope, game) {
         $scope.content = 'Shop';
+
+        $scope.products = game.getProducts();
     }]);

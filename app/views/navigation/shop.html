@@ -1,3 +1,7 @@
 <div ng-controller="ShopCtrl">
-    This is {{content}}!!!
+    <ul>
+        <li ng-repeat="product in products">
+            <span class="glyphicon {{product.icon}}"></span> - {{product.name}} - {{product.quantity}} - {{product.currentPrice}}
+        </li>
+    </ul>
 </div>
