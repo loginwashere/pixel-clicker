@@ -49,7 +49,7 @@ angular.module('clientApp')
         };
 
         this.grannies = {
-            "name": "grannys",
+            "name": "grannies",
             "title": "Granny",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.",
             "image": "http://placehold.it/100x100",
