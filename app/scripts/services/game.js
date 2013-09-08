@@ -43,6 +43,7 @@ angular.module('clientApp')
                     scope.$apply(function () {
                         self.numberOfClicks += self.calculateIncrement();
                         scope.numberOfClicks = self.numberOfClicks;
+                        scope.$root.numberOfClicks = self.formatDecimal(self.numberOfClicks);
                     });
                 }, 1000 / 60);
             };
