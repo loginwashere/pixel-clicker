@@ -1,15 +1,15 @@
 'use strict';
 
 angular.module('clientApp')
-    .service('game', ['Products', function Game(Products) {
-        return new (function (Products) {
+    .service('game', ['products', function Game(products) {
+        return new (function (products) {
             var self = this;
 
             this.title = 'Pixel Clicker';
 
             this.numberOfClicks = 0;
 
-            this.products = Products.getProducts();
+            this.products = products.getProducts();
 
             this.formatNumber = function(x, decimal) {
                 var parts = x.toString().split(".");
@@ -74,10 +74,10 @@ angular.module('clientApp')
             };
 
             this.buy = function(type){
-                var price = Products.getProductByType(type).currentPrice;
+                var price = products.getProductByType(type).currentPrice;
 
                 if (this.getNumberOfClicks() >= price) {
-                    Products.getProductByType(type).buy();
+                    products.getProductByType(type).buy();
 
                     this.numberOfClicks -= price;
                 }
@@ -85,7 +85,7 @@ angular.module('clientApp')
 
             this.sell = function(type){
                 var price = Products.getProductByType(type).currentPrice;
-                Products.getProductByType(type).sell();
+                products.getProductByType(type).sell();
 
                 this.numberOfClicks += price;
             };
@@ -93,14 +93,14 @@ angular.module('clientApp')
             this.canProductBeBought = function(type){
                 var result = false;
 
-                if (this.getNumberOfClicks() >= Products.getProductByType(type).currentPrice) {
+                if (this.getNumberOfClicks() >= products.getProductByType(type).currentPrice) {
                     result = true;
                 }
                 return result;
             };
 
             this.canProductBeSoled = function(type){
-                return Products.getProductByType(type).items.length > 0;
+                return products.getProductByType(type).items.length > 0;
             };
-        })(Products);
+        })(products);
     }]);

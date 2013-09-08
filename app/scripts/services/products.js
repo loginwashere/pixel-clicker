@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clientApp')
-    .service('Products', function Products() {
+    .service('products', function Products() {
         var self = this;
 
         this.buy = function(items){
