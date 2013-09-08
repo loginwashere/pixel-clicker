@@ -89,5 +89,18 @@ angular.module('clientApp')
 
                 this.numberOfClicks += price;
             };
+
+            this.canProductBeBought = function(type){
+                var result = false;
+
+                if (this.getNumberOfClicks() >= Products.getProductByType(type).currentPrice) {
+                    result = true;
+                }
+                return result;
+            };
+
+            this.canProductBeSoled = function(type){
+                return Products.getProductByType(type).items.length > 0;
+            };
         })(Products);
     }, {$inject: ['Products']});
