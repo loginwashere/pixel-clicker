@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clientApp')
-    .service('game', function Game(Products) {
+    .service('game', ['Products', function Game(Products) {
         return new (function (Products) {
             var self = this;
 
@@ -103,4 +103,4 @@ angular.module('clientApp')
                 return Products.getProductByType(type).items.length > 0;
             };
         })(Products);
-    }, {$inject: ['Products']});
+    }]);
