@@ -18,8 +18,12 @@ angular.module('clientApp')
             }
         };
 
+        this.calculateIncrement = function(items){
+            return items.items.length * items.productivity
+        };
+
         this.cursors = {
-            "name": "cursor",
+            "name": "cursors",
             "title": "Cursor",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.",
             "image": "http://placehold.it/100x100",
@@ -27,7 +31,8 @@ angular.module('clientApp')
                 return self.getCursors()['items'].length;
             },
             "icon": "glyphicon-star",
-            "currentPrice": 100,
+            "currentPrice": 10,
+            "productivity": 0.1,
             "items": [],
             "buy": function(){
                 var items = self.getCursors();
@@ -36,11 +41,15 @@ angular.module('clientApp')
             "sell": function(){
                 var items = self.getCursors();
                 self.sell(items);
+            },
+            "calculateIncrement": function(){
+                var items = self.getCursors();
+                return self.calculateIncrement(items);
             }
         };
 
         this.grannies = {
-            "name": "granny",
+            "name": "grannys",
             "title": "Granny",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.",
             "image": "http://placehold.it/100x100",
@@ -49,6 +58,7 @@ angular.module('clientApp')
             },
             "icon": "glyphicon-star",
             "currentPrice": 200,
+            "productivity": 0.5,
             "items": [],
             "buy": function(){
                 var items = self.getGrannies();
@@ -57,11 +67,15 @@ angular.module('clientApp')
             "sell": function(){
                 var items = self.getGrannies();
                 self.sell(items);
+            },
+            "calculateIncrement": function(){
+                var items = self.getGrannies();
+                return self.calculateIncrement(items);
             }
         };
 
         this.farms = {
-            "name": "farm",
+            "name": "farms",
             "title": "Farm",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.",
             "image": "http://placehold.it/100x100",
@@ -70,6 +84,7 @@ angular.module('clientApp')
             },
             "icon": "glyphicon-star",
             "currentPrice": 300,
+            "productivity": 2,
             "items": [],
             "buy": function(){
                 var items = self.getFarms();
@@ -78,11 +93,15 @@ angular.module('clientApp')
             "sell": function(){
                 var items = self.getFarms();
                 self.sell(items);
+            },
+            "calculateIncrement": function(){
+                var items = self.getFarms();
+                return self.calculateIncrement(items);
             }
         };
 
         this.factories = {
-            "name": "factory",
+            "name": "factories",
             "title": "Factory",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.",
             "image": "http://placehold.it/100x100",
@@ -91,6 +110,7 @@ angular.module('clientApp')
             },
             "icon": "glyphicon-star-empty",
             "currentPrice": 400,
+            "productivity": 10,
             "items": [],
             "buy": function(){
                 var items = self.getFactories();
@@ -99,11 +119,15 @@ angular.module('clientApp')
             "sell": function(){
                 var items = self.getFactories();
                 self.sell(items);
+            },
+            "calculateIncrement": function(){
+                var items = self.getFactories();
+                return self.calculateIncrement(items);
             }
         };
 
         this.deliveries = {
-            "name": "delivery",
+            "name": "deliveries",
             "title": "Delivery",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.",
             "image": "http://placehold.it/100x100",
@@ -112,6 +136,7 @@ angular.module('clientApp')
             },
             "icon": "glyphicon-star",
             "currentPrice": 500,
+            "productivity": 40,
             "items": [],
             "buy": function(){
                 var items = self.getDeliveries();
@@ -120,11 +145,15 @@ angular.module('clientApp')
             "sell": function(){
                 var items = self.getDeliveries();
                 self.sell(items);
+            },
+            "calculateIncrement": function(){
+                var items = self.getDeliveries();
+                return self.calculateIncrement(items);
             }
         };
 
         this.labs = {
-            "name": "lab",
+            "name": "labs",
             "title": "Lab",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.",
             "image": "http://placehold.it/100x100",
@@ -133,6 +162,7 @@ angular.module('clientApp')
             },
             "icon": "glyphicon-star",
             "currentPrice": 600,
+            "productivity": 100,
             "items": [],
             "buy": function(){
                 var items = self.getLabs();
@@ -141,11 +171,15 @@ angular.module('clientApp')
             "sell": function(){
                 var items = self.getLabs();
                 self.sell(items);
+            },
+            "calculateIncrement": function(){
+                var items = self.getLabs();
+                return self.calculateIncrement(items);
             }
         };
 
         this.portals = {
-            "name": "portal",
+            "name": "portals",
             "title": "Portal",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.",
             "image": "http://placehold.it/100x100",
@@ -154,6 +188,7 @@ angular.module('clientApp')
             },
             "icon": "glyphicon-star",
             "currentPrice": 700,
+            "productivity": 6666,
             "items": [],
             "buy": function(){
                 var items = self.getPortals();
@@ -162,11 +197,15 @@ angular.module('clientApp')
             "sell": function(){
                 var items = self.getPortals();
                 self.sell(items);
+            },
+            "calculateIncrement": function(){
+                var items = self.getPortals();
+                return self.calculateIncrement(items);
             }
         };
 
         this.timeMachines = {
-            "name": "timeMachine",
+            "name": "timeMachines",
             "title": "Time Machine",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.",
             "image": "http://placehold.it/100x100",
@@ -175,6 +214,7 @@ angular.module('clientApp')
             },
             "icon": "glyphicon-star",
             "currentPrice": 800,
+            "productivity": 90000,
             "items": [],
             "buy": function(){
                 var items = self.getTimeMachines();
@@ -183,6 +223,10 @@ angular.module('clientApp')
             "sell": function(){
                 var items = self.getTimeMachines();
                 self.sell(items);
+            },
+            "calculateIncrement": function(){
+                var items = self.getTimeMachines();
+                return self.calculateIncrement(items);
             }
         };
 
@@ -220,6 +264,10 @@ angular.module('clientApp')
 
         this.getProducts = function () {
             return this.products;
+        };
+
+        this.getProductByType = function(type){
+            return this[type];
         };
 
         this.products = [

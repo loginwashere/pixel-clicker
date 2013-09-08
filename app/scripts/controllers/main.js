@@ -2,11 +2,7 @@
 
 angular.module('clientApp')
     .controller('MainCtrl', ['$scope', 'game', function ($scope, game) {
-        $scope.title = 'Pixel Clicker';
-
-        game.loop($scope);
-
-        $scope.numberOfClicks = game.getNumberOfClicks();
-
+        $scope.game = game;
         $scope.clickPixel = game.clickPixel($scope);
+        game.loop($scope);
     }]);

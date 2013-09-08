@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <h1>{{title}}</h1>
+                <h1>{{game.getTitle()}}</h1>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida. Curabitur tempor volutpat velit eu accumsan. Donec justo arcu, fringilla ac iaculis ac, ultrices placerat urna. Duis id convallis turpis. Pellentesque cursus rhoncus vestibulum.
                 </p>
@@ -17,7 +17,7 @@
                         <h3>Great Pixel</h3>
                         <p>
                             <span class="label label-primary">Pixels</span>
-                            <span class="badge pull-right">{{numberOfClicks}}</span>
+                            <span class="badge pull-right">{{game.formatDecimal(game.getNumberOfClicks())}}</span>
                         </p>
                     </div>
                 </div>

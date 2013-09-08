@@ -1,6 +1,6 @@
 <div ng-controller="ShopCtrl">
     <ul class="list-unstyled row">
-        <li class="col-md-3" ng-repeat="product in products">
+        <li class="col-md-3" ng-repeat="product in game.getProducts()">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title"><span class="glyphicon {{product.icon}} white"></span> {{product.title}}
@@ -14,17 +14,17 @@
                         </div>
                         <p>
                             <span class="label label-info">Quantity</span>
-                            <span class="badge pull-right">{{product.quantity()}}</span>
+                            <span class="badge pull-right">{{game.formatInt(product.quantity())}}</span>
                         </p>
                         <p>
                             <span class="label label-info">Price</span>
-                            <span class="badge pull-right">{{product.currentPrice}}</span>
+                            <span class="badge pull-right">{{game.formatInt(product.currentPrice)}}</span>
                         </p>
                     </div>
                 </div>
                 <div class="panel-footer">
-                    <button class="btn btn-primary pull-right btn-lg" ng-click="product.buy()">Buy</button>
-                    <button class="btn btn-danger" ng-click="product.sell()">Sell</button>
+                    <button class="btn btn-primary pull-right btn-lg" ng-click="game.buy(product.name)">Buy</button>
+                    <button class="btn btn-danger" ng-click="game.sell(product.name)">Sell</button>
                     <div class="clearfix"></div>
                 </div>
             </div>
