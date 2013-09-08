@@ -1,7 +1,33 @@
 <div ng-controller="ShopCtrl">
-    <ul>
-        <li ng-repeat="product in products">
-            <span class="glyphicon {{product.icon}}"></span> - {{product.name}} - {{product.quantity}} - {{product.currentPrice}}
+    <ul class="list-unstyled row">
+        <li class="col-md-3" ng-repeat="product in products">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="glyphicon {{product.icon}} white"></span> {{product.title}}
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="thumbnail">
+                        <img src="{{product.image}}" alt="{{product.title}}" class="img-circle">
+                        <div class="caption">
+                            <p>{{product.description}}</p>
+                        </div>
+                        <p>
+                            <span class="label label-info">Quantity</span>
+                            <span class="badge pull-right">{{product.quantity()}}</span>
+                        </p>
+                        <p>
+                            <span class="label label-info">Price</span>
+                            <span class="badge pull-right">{{product.currentPrice}}</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-primary pull-right btn-lg" ng-click="product.buy()">Buy</button>
+                    <button class="btn btn-danger" ng-click="product.sell()">Sell</button>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
         </li>
     </ul>
 </div>

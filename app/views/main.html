@@ -1,19 +1,33 @@
-<div class="hero-unit">
-    <div id="main-pixel" class="pull-right" ng-click="click()"></div>
-
-    <h1>{{title}}</h1>
-
-    <p>You now have pixel to click</p>
-
-    <p>Number of clicks: {{numberOfClicks}}</p>
-
-    <p>{{clock}}</p>
-
-    <div class="clearfix"></div>
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>{{title}}</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida. Curabitur tempor volutpat velit eu accumsan. Donec justo arcu, fringilla ac iaculis ac, ultrices placerat urna. Duis id convallis turpis. Pellentesque cursus rhoncus vestibulum.
+                </p>
+                <p>
+                    Nam pellentesque massa ligula, mattis tincidunt leo fermentum vel. Aliquam ut neque aliquam, egestas erat luctus, aliquam felis. Etiam tincidunt tincidunt elit. Suspendisse porta urna nisi, a fermentum felis scelerisque sit amet. Duis suscipit varius accumsan.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/300x300" alt="Great Pixel" ng-click="clickPixel()">
+                    <div class="caption">
+                        <h3>Great Pixel</h3>
+                        <p>
+                            <span class="label label-primary">Pixels</span>
+                            <span class="badge pull-right">{{numberOfClicks}}</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div ng-controller="NavigationCtrl">
-    <tabset  type="navType">
+    <tabset type="navType">
         <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">
             <div ng-include="tab.content"></div>
         </tab>
