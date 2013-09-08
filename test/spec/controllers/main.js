@@ -17,15 +17,13 @@ describe('Controller: MainCtrl', function () {
     }));
 
     it('should attach app title and numberOfClicks to the scope', function () {
-        expect(scope.title).toBeDefined();
-        expect(scope.title).toBe('Pixel Clicker');
+        expect(scope.game.getTitle()).toBe('Pixel Clicker');
 
-        expect(scope.numberOfClicks).toBeDefined();
-        expect(scope.numberOfClicks).toBe(0);
+        expect(scope.game.getNumberOfClicks()).toBe(0);
     });
 
     it('should increment numberOfClicks when click method called', function () {
-        scope.click();
+        scope.clickPixel();
         expect(scope.numberOfClicks).toBe(1);
     });
 });
