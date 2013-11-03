@@ -4,227 +4,227 @@ angular.module('clientApp')
     .service('products', function Products() {
         var self = this;
 
-        this.buy = function(items){
-            items['items'].push({
-                "price": items['currentPrice']
+        this.buy = function (items) {
+            items.items.push({
+                price: items.currentPrice
             });
-            items['currentPrice'] += items['currentPrice'];
+            items.currentPrice += items.currentPrice;
         };
 
-        this.sell = function(items){
-            if (items['items'].length >= 1) {
-                var current = items['items'].pop();
-                items['currentPrice'] = current["price"];
+        this.sell = function (items) {
+            if (items.items.length >= 1) {
+                var current = items.items.pop();
+                items.currentPrice = current.price;
             }
         };
 
-        this.calculateIncrement = function(items){
-            return items.items.length * items.productivity
+        this.calculateIncrement = function (items) {
+            return items.items.length * items.productivity;
         };
 
         this.cursors = {
-            "name": "cursors",
-            "title": "Cursor",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.",
-            "image": "http://placehold.it/100x100",
-            "quantity": function(){
-                return self.getCursors()['items'].length;
+            name: 'cursors',
+            title: 'Cursor',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.',
+            image: 'http://placehold.it/100x100',
+            quantity: function () {
+                return self.getCursors().items.length;
             },
-            "icon": "glyphicon-star",
-            "currentPrice": 10,
-            "productivity": 0.1,
-            "items": [],
-            "buy": function(){
+            icon: 'glyphicon-star',
+            currentPrice: 10,
+            productivity: 0.1,
+            items: [],
+            buy: function () {
                 var items = self.getCursors();
                 self.buy(items);
             },
-            "sell": function(){
+            sell: function () {
                 var items = self.getCursors();
                 self.sell(items);
             },
-            "calculateIncrement": function(){
+            calculateIncrement: function () {
                 var items = self.getCursors();
                 return self.calculateIncrement(items);
             }
         };
 
         this.grannies = {
-            "name": "grannies",
-            "title": "Granny",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.",
-            "image": "http://placehold.it/100x100",
-            "quantity": function(){
-                return self.getGrannies()['items'].length;
+            name: 'grannies',
+            title: 'Granny',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.',
+            image: 'http://placehold.it/100x100',
+            quantity: function () {
+                return self.getGrannies().items.length;
             },
-            "icon": "glyphicon-star",
-            "currentPrice": 200,
-            "productivity": 0.5,
-            "items": [],
-            "buy": function(){
+            icon: 'glyphicon-star',
+            currentPrice: 200,
+            productivity: 0.5,
+            items: [],
+            buy: function () {
                 var items = self.getGrannies();
                 self.buy(items);
             },
-            "sell": function(){
+            sell: function () {
                 var items = self.getGrannies();
                 self.sell(items);
             },
-            "calculateIncrement": function(){
+            calculateIncrement: function () {
                 var items = self.getGrannies();
                 return self.calculateIncrement(items);
             }
         };
 
         this.farms = {
-            "name": "farms",
-            "title": "Farm",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.",
-            "image": "http://placehold.it/100x100",
-            "quantity": function(){
-                return self.getFarms()['items'].length;
+            name: 'farms',
+            title: 'Farm',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.',
+            image: 'http://placehold.it/100x100',
+            quantity: function () {
+                return self.getFarms().items.length;
             },
-            "icon": "glyphicon-star",
-            "currentPrice": 300,
-            "productivity": 2,
-            "items": [],
-            "buy": function(){
+            icon: 'glyphicon-star',
+            currentPrice: 300,
+            productivity: 2,
+            items: [],
+            buy: function () {
                 var items = self.getFarms();
                 self.buy(items);
             },
-            "sell": function(){
+            sell: function () {
                 var items = self.getFarms();
                 self.sell(items);
             },
-            "calculateIncrement": function(){
+            calculateIncrement: function () {
                 var items = self.getFarms();
                 return self.calculateIncrement(items);
             }
         };
 
         this.factories = {
-            "name": "factories",
-            "title": "Factory",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.",
-            "image": "http://placehold.it/100x100",
-            "quantity": function(){
-                return self.getFactories()['items'].length;
+            name: 'factories',
+            title: 'Factory',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.',
+            image: 'http://placehold.it/100x100',
+            quantity: function () {
+                return self.getFactories().items.length;
             },
-            "icon": "glyphicon-star-empty",
-            "currentPrice": 400,
-            "productivity": 10,
-            "items": [],
-            "buy": function(){
+            icon: 'glyphicon-star-empty',
+            currentPrice: 400,
+            productivity: 10,
+            items: [],
+            buy: function () {
                 var items = self.getFactories();
                 self.buy(items);
             },
-            "sell": function(){
+            sell: function () {
                 var items = self.getFactories();
                 self.sell(items);
             },
-            "calculateIncrement": function(){
+            calculateIncrement: function () {
                 var items = self.getFactories();
                 return self.calculateIncrement(items);
             }
         };
 
         this.deliveries = {
-            "name": "deliveries",
-            "title": "Delivery",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.",
-            "image": "http://placehold.it/100x100",
-            "quantity": function(){
-                return self.getDeliveries()['items'].length;
+            name: 'deliveries',
+            title: 'Delivery',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.',
+            image: 'http://placehold.it/100x100',
+            quantity: function () {
+                return self.getDeliveries().items.length;
             },
-            "icon": "glyphicon-star",
-            "currentPrice": 500,
-            "productivity": 40,
-            "items": [],
-            "buy": function(){
+            icon: 'glyphicon-star',
+            currentPrice: 500,
+            productivity: 40,
+            items: [],
+            buy: function () {
                 var items = self.getDeliveries();
                 self.buy(items);
             },
-            "sell": function(){
+            sell: function () {
                 var items = self.getDeliveries();
                 self.sell(items);
             },
-            "calculateIncrement": function(){
+            calculateIncrement: function () {
                 var items = self.getDeliveries();
                 return self.calculateIncrement(items);
             }
         };
 
         this.labs = {
-            "name": "labs",
-            "title": "Lab",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.",
-            "image": "http://placehold.it/100x100",
-            "quantity": function(){
-                return self.getLabs()['items'].length;
+            name: 'labs',
+            title: 'Lab',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.',
+            image: 'http://placehold.it/100x100',
+            quantity: function () {
+                return self.getLabs().items.length;
             },
-            "icon": "glyphicon-star",
-            "currentPrice": 600,
-            "productivity": 100,
-            "items": [],
-            "buy": function(){
+            icon: 'glyphicon-star',
+            currentPrice: 600,
+            productivity: 100,
+            items: [],
+            buy: function () {
                 var items = self.getLabs();
                 self.buy(items);
             },
-            "sell": function(){
+            sell: function () {
                 var items = self.getLabs();
                 self.sell(items);
             },
-            "calculateIncrement": function(){
+            calculateIncrement: function () {
                 var items = self.getLabs();
                 return self.calculateIncrement(items);
             }
         };
 
         this.portals = {
-            "name": "portals",
-            "title": "Portal",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.",
-            "image": "http://placehold.it/100x100",
-            "quantity": function(){
-                return self.getPortals()['items'].length;
+            name: 'portals',
+            title: 'Portal',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.',
+            image: 'http://placehold.it/100x100',
+            quantity: function () {
+                return self.getPortals().items.length;
             },
-            "icon": "glyphicon-star",
-            "currentPrice": 700,
-            "productivity": 6666,
-            "items": [],
-            "buy": function(){
+            icon: 'glyphicon-star',
+            currentPrice: 700,
+            productivity: 6666,
+            items: [],
+            buy: function () {
                 var items = self.getPortals();
                 self.buy(items);
             },
-            "sell": function(){
+            sell: function () {
                 var items = self.getPortals();
                 self.sell(items);
             },
-            "calculateIncrement": function(){
+            calculateIncrement: function () {
                 var items = self.getPortals();
                 return self.calculateIncrement(items);
             }
         };
 
         this.timeMachines = {
-            "name": "timeMachines",
-            "title": "Time Machine",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.",
-            "image": "http://placehold.it/100x100",
-            "quantity": function(){
-                return self.getTimeMachines()['items'].length;
+            name: 'timeMachines',
+            title: 'Time Machine',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.',
+            image: 'http://placehold.it/100x100',
+            quantity: function () {
+                return self.getTimeMachines().items.length;
             },
-            "icon": "glyphicon-star",
-            "currentPrice": 800,
-            "productivity": 90000,
-            "items": [],
-            "buy": function(){
+            icon: 'glyphicon-star',
+            currentPrice: 800,
+            productivity: 90000,
+            items: [],
+            buy: function () {
                 var items = self.getTimeMachines();
                 self.buy(items);
             },
-            "sell": function(){
+            sell: function () {
                 var items = self.getTimeMachines();
                 self.sell(items);
             },
-            "calculateIncrement": function(){
+            calculateIncrement: function () {
                 var items = self.getTimeMachines();
                 return self.calculateIncrement(items);
             }
@@ -266,7 +266,7 @@ angular.module('clientApp')
             return this.products;
         };
 
-        this.getProductByType = function(type){
+        this.getProductByType = function (type) {
             return this[type];
         };
 

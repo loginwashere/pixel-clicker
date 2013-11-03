@@ -12,8 +12,8 @@ angular.module('clientApp')
             this.products = products.getProducts();
 
             this.formatNumber = function(x, decimal) {
-                var parts = x.toString().split(".");
-                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                var parts = x.toString().split('.');
+                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
                 if (decimal) {
                     if (parts[1]) {
@@ -23,7 +23,7 @@ angular.module('clientApp')
                     }
                 }
 
-                return parts.join(".");
+                return parts.join('.');
             };
 
             this.formatInt = function(x){
@@ -52,7 +52,7 @@ angular.module('clientApp')
                 return function () {
                     self.numberOfClicks++;
                     scope.numberOfClicks = self.numberOfClicks;
-                }
+                };
             };
 
             this.getNumberOfClicks = function () {
@@ -103,5 +103,7 @@ angular.module('clientApp')
             this.canProductBeSoled = function(type){
                 return products.getProductByType(type).items.length > 0;
             };
+
+            return this;
         })(products);
     }]);

@@ -344,22 +344,26 @@ module.exports = function (grunt) {
                 paths: ['<%= yeoman.app %>/bower_components']
             },
             dist: {
-                files: [{
-                    expand: true,     // Enable dynamic expansion.
-                    cwd: '<%= yeoman.app %>/styles/',      // Src matches are relative to this path.
-                    src: ['**/*.less'], // Actual pattern(s) to match.
-                    dest: '.tmp/styles/',   // Destination path prefix.
-                    ext: '.css'   // Dest filepaths will have this extension.
-                }]
+                files: [
+                    {
+                        expand: true,     // Enable dynamic expansion.
+                        cwd: '<%= yeoman.app %>/styles/',      // Src matches are relative to this path.
+                        src: ['**/*.less'], // Actual pattern(s) to match.
+                        dest: '.tmp/styles/',   // Destination path prefix.
+                        ext: '.css'   // Dest filepaths will have this extension.
+                    }
+                ]
             },
             server: {
-                files: [{
-                    expand: true,     // Enable dynamic expansion.
-                    cwd: '<%= yeoman.app %>/styles/',      // Src matches are relative to this path.
-                    src: ['**/*.less'], // Actual pattern(s) to match.
-                    dest: '.tmp/styles/',   // Destination path prefix.
-                    ext: '.css'   // Dest filepaths will have this extension.
-                }]
+                files: [
+                    {
+                        expand: true,     // Enable dynamic expansion.
+                        cwd: '<%= yeoman.app %>/styles/',      // Src matches are relative to this path.
+                        src: ['**/*.less'], // Actual pattern(s) to match.
+                        dest: '.tmp/styles/',   // Destination path prefix.
+                        ext: '.css'   // Dest filepaths will have this extension.
+                    }
+                ]
             }
         }
     });
