@@ -85,7 +85,7 @@ angular.module('clientApp')
             };
 
             this.sell = function(type){
-                var price = Products.getProductByType(type).currentPrice;
+                var price = products.getProductByType(type).currentPrice;
                 products.getProductByType(type).sell();
 
                 this.numberOfClicks += price;
