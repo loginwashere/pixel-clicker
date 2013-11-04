@@ -39,7 +39,19 @@
     "karma-phantomjs-launcher": "~0.1.0",
     "karma": "~0.10.2",
     "karma-ng-html2js-preprocessor": "~0.1.0",
-    "grunt-contrib-less": "~0.7.0"
+    "grunt-contrib-less": "~0.7.0",
+    "graceful-fs": "~2.0.1",
+    "async": "~0.2.9",
+    "q": "~0.9.3",
+    "wrench": "~1.5.1",
+    "mimeparse": "~0.1.4",
+    "url2": "0.0.0",
+    "mime": "~1.2.11",
+    "qs": "~0.1.0",
+    "weak-map": "~1.0.0",
+    "collections": "~0.1.24",
+    "q-io": "~1.6.5",
+    "grunt-gh-pages": "~0.8.1"
   },
   "engines": {
     "node": ">=0.8.0"
