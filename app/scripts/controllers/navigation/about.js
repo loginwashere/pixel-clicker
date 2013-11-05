@@ -1,6 +1,7 @@
-'use strict';
+define(['../module'], function (controllers) {
+    'use strict';
 
-angular.module('clientApp')
-    .controller('AboutCtrl', ['$scope', function ($scope) {
+    controllers.controller('AboutCtrl', ['$scope', function ($scope) {
         $scope.content = 'About';
     }]);
+});

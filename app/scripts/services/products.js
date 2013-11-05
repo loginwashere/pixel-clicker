@@ -1,7 +1,7 @@
-'use strict';
+define(['./module'], function (services) {
+    'use strict';
 
-angular.module('clientApp')
-    .service('products', function Products() {
+    services.service('products', function Products() {
         var self = this;
 
         this.buy = function (items) {
@@ -281,3 +281,4 @@ angular.module('clientApp')
             this.getTimeMachines()
         ];
     });
+});

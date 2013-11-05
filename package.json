@@ -51,7 +51,8 @@
     "weak-map": "~1.0.0",
     "collections": "~0.1.24",
     "q-io": "~1.6.5",
-    "grunt-gh-pages": "~0.8.1"
+    "grunt-gh-pages": "~0.8.1",
+    "grunt-requirejs": "~0.4.0"
   },
   "engines": {
     "node": ">=0.8.0"

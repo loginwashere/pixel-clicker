@@ -1,7 +1,7 @@
-'use strict';
+define(['./module'], function (services) {
+    'use strict';
 
-angular.module('clientApp')
-    .service('game', ['products', function Game(products) {
+    services.service('game', ['products', function Game(products) {
         return new (function (products) {
             var self = this;
 
@@ -107,3 +107,4 @@ angular.module('clientApp')
             return this;
         })(products);
     }]);
+});

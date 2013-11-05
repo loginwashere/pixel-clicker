@@ -330,15 +330,6 @@ module.exports = function (grunt) {
                 ]
             }
         },
-        uglify: {
-            dist: {
-                files: {
-                    '<%= yeoman.dist %>/scripts/scripts.js': [
-                        '<%= yeoman.dist %>/scripts/scripts.js'
-                    ]
-                }
-            }
-        },
         less: {
             options: {
                 paths: ['<%= yeoman.app %>/bower_components']
@@ -364,6 +355,26 @@ module.exports = function (grunt) {
                         ext: '.css'   // Dest filepaths will have this extension.
                     }
                 ]
+            }
+        },
+        requirejs: {
+            dist: {
+                // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
+                options: {
+                    // `name` and `out` is set by grunt-usemin
+                    baseUrl: '<%= yeoman.app %>/scripts',
+                    optimize: 'none',
+                    // TODO: Figure out how to make sourcemaps work with grunt-usemin
+                    // https://github.com/yeoman/grunt-usemin/issues/30
+                    //generateSourceMaps: true,
+                    // required to support SourceMaps
+                    // http://requirejs.org/docs/errors.html#sourcemapcomments
+                    preserveLicenseComments: false,
+                    useStrict: true,
+                    wrap: true,
+                    //uglify2: {} // https://github.com/mishoo/UglifyJS2
+                    findNestedDependencies: true
+                }
             }
         },
         'gh-pages': {
@@ -400,6 +411,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
+        'requirejs',
         'concurrent:dist',
         'autoprefixer',
         'concat',
@@ -408,7 +420,6 @@ module.exports = function (grunt) {
         'ngmin',
         'less',
         'cssmin',
-        'uglify',
         'rev',
         'usemin'
     ]);
