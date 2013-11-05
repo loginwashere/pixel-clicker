@@ -1,0 +1,5 @@
+define([
+    './game',
+    './products'
+], function () {
+});

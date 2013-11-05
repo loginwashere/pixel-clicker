@@ -1,14 +1,14 @@
-'use strict';
+define([
+    'angular',
+    './controllers/index',
+    './services/index',
+    'ui.bootstrap'
+], function (ng) {
+    'use strict';
 
-angular.module('clientApp', ['ui.bootstrap'])
-    .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-        $routeProvider
-            .when('/', {
-                templateUrl: 'views/main.html',
-                controller: 'MainCtrl'
-            })
-            .otherwise({
-                redirectTo: '/'
-            });
-        $locationProvider.html5Mode(true);
-    }]);
+    return ng.module('app', [
+        'app.services',
+        'app.controllers',
+        'ui.bootstrap'
+    ]);
+});

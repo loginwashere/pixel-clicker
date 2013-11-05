@@ -1,7 +1,7 @@
-'use strict';
+define(['./module'], function (controllers) {
+    'use strict';
 
-angular.module('clientApp')
-    .controller('NavigationCtrl', ['$scope', function ($scope) {
+    controllers.controller('NavigationCtrl', ['$scope', function ($scope) {
         $scope.tabs = [
             {title: 'Shop', content: 'views/navigation/shop.html'},
             {title: 'Menu', content: 'views/navigation/menu.html'},
@@ -12,3 +12,4 @@ angular.module('clientApp')
 
         $scope.navType = 'pills';
     }]);
+});
