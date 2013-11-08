@@ -6681,7 +6681,7 @@
         quantity: function () {
           return self.getCursors().items.length;
         },
-        icon: 'glyphicon-star',
+        icon: 'glyphicon-hand-up',
         currentPrice: 10,
         productivity: 0.1,
         items: [],
@@ -6706,7 +6706,7 @@
         quantity: function () {
           return self.getGrannies().items.length;
         },
-        icon: 'glyphicon-star',
+        icon: 'glyphicon-user',
         currentPrice: 200,
         productivity: 0.5,
         items: [],
@@ -6731,7 +6731,7 @@
         quantity: function () {
           return self.getFarms().items.length;
         },
-        icon: 'glyphicon-star',
+        icon: 'glyphicon-cutlery',
         currentPrice: 300,
         productivity: 2,
         items: [],
@@ -6781,7 +6781,7 @@
         quantity: function () {
           return self.getDeliveries().items.length;
         },
-        icon: 'glyphicon-star',
+        icon: 'glyphicon-plane',
         currentPrice: 500,
         productivity: 40,
         items: [],
@@ -6806,7 +6806,7 @@
         quantity: function () {
           return self.getLabs().items.length;
         },
-        icon: 'glyphicon-star',
+        icon: 'glyphicon-dashboard',
         currentPrice: 600,
         productivity: 100,
         items: [],
@@ -6831,7 +6831,7 @@
         quantity: function () {
           return self.getPortals().items.length;
         },
-        icon: 'glyphicon-star',
+        icon: 'glyphicon-fire',
         currentPrice: 700,
         productivity: 6666,
         items: [],
@@ -6856,7 +6856,7 @@
         quantity: function () {
           return self.getTimeMachines().items.length;
         },
-        icon: 'glyphicon-star',
+        icon: 'glyphicon-certificate',
         currentPrice: 800,
         productivity: 90000,
         items: [],
