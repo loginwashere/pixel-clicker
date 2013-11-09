@@ -288,6 +288,18 @@ module.exports = function (grunt) {
                         ]
                     }
                 ]
+            },
+            server: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= yeoman.app %>/bower_components/bootstrap',
+                        dest: '.tmp/styles',
+                        src: [
+                            'fonts/*'
+                        ]
+                    }
+                ]
             }
         },
         concurrent: {
@@ -393,6 +405,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:server',
             'concurrent:server',
+            'copy:server',
             'autoprefixer',
             'connect:livereload',
             'open',
