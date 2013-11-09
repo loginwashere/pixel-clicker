@@ -20,7 +20,7 @@
                         <h3>Great Pixel</h3>
                         <p>
                             <span class="label label-primary">Pixels</span>
-                            <span class="badge pull-right">{{game.formatDecimal(game.getNumberOfClicks())}}</span>
+                            <span class="badge pull-right">{{game.getNumberOfClicks() | number:1}}</span>
                         </p>
                     </div>
                 </div>

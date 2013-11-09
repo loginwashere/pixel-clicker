@@ -11,7 +11,7 @@
                 <h3 class="panel-title">
                     <span class="glyphicon {{product.icon}} white"></span>
                     {{product.title}}
-                    <span class="badge pull-right">{{game.formatInt(product.quantity())}}</span>
+                    <span class="badge pull-right">{{product.quantity() | number:0}}</span>
                 </h3>
             </div>
             <div class="panel-body media">
@@ -20,7 +20,7 @@
                 </a>
                 <p class="hidden-xs">{{product.description}}</p>
                 <p>
-                    <span class="label label-info pull-right">Price <span class="badge">{{game.formatInt(product.currentPrice)}}</span></span>
+                    <span class="label label-info pull-right">Price <span class="badge">{{product.currentPrice | number:0}}</span></span>
                 </p>
             </div>
             <div class="panel-footer">
