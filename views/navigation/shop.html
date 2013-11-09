@@ -1,33 +1,33 @@
-<div ng-controller="ShopCtrl">
-    <ul class="list-unstyled row">
-        <li class="col-md-3" ng-repeat="product in game.getProducts()">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><span class="glyphicon {{product.icon}} white"></span> {{product.title}}
-                    </h3>
-                </div>
-                <div class="panel-body">
-                    <div class="thumbnail">
-                        <img src="{{product.image}}" alt="{{product.title}}" class="img-circle">
-                        <div class="caption">
-                            <p>{{product.description}}</p>
-                        </div>
-                        <p>
-                            <span class="label label-info">Quantity</span>
-                            <span class="badge pull-right">{{game.formatInt(product.quantity())}}</span>
-                        </p>
-                        <p>
-                            <span class="label label-info">Price</span>
-                            <span class="badge pull-right">{{game.formatInt(product.currentPrice)}}</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="panel-footer">
-                    <button class="btn btn-primary pull-right btn-lg ng-class: {disabled: !game.canProductBeBought(product.name)};" ng-click="game.buy(product.name)">Buy</button>
-                    <button class="btn btn-danger ng-class: {disabled: !game.canProductBeSoled(product.name)};" ng-click="game.sell(product.name)">Sell</button>
-                    <div class="clearfix"></div>
-                </div>
+<div class="wall_container" masonry-wall-dir=".item" masonry-wall-options="{
+            columnWidth: '.grid-sizer',
+            itemSelector: '.item',
+            gutter: 0,
+            transitionDuration: '0.3s'
+        }">
+    <div class="grid-sizer"></div>
+    <div class="item" ng-repeat="product in game.getProducts()" custom-directive="" masonry-item-dir="">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <span class="glyphicon {{product.icon}} white"></span>
+                    {{product.title}}
+                    <span class="badge pull-right">{{game.formatInt(product.quantity())}}</span>
+                </h3>
             </div>
-        </li>
-    </ul>
+            <div class="panel-body media">
+                <a class="pull-left" href="#">
+                    <img src="{{product.image}}" alt="{{product.title}}" class="media-object img-circle">
+                </a>
+                <p class="hidden-xs">{{product.description}}</p>
+                <p>
+                    <span class="label label-info pull-right">Price <span class="badge">{{game.formatInt(product.currentPrice)}}</span></span>
+                </p>
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-primary pull-right btn-lg ng-class: {disabled: !game.canProductBeBought(product.name)};" ng-click="game.buy(product.name)">Buy</button>
+                <button class="btn btn-danger ng-class: {disabled: !game.canProductBeSoled(product.name)};" ng-click="game.sell(product.name)">Sell</button>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
 </div>
