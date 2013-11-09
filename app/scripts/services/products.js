@@ -77,7 +77,7 @@ define(['./module'], function (services) {
         this.farms = {
             name: 'farms',
             title: 'Farm',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium',
             image: 'http://placehold.it/100x100',
             quantity: function () {
                 return self.getFarms().items.length;
@@ -155,7 +155,7 @@ define(['./module'], function (services) {
         this.labs = {
             name: 'labs',
             title: 'Lab',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium',
             image: 'http://placehold.it/100x100',
             quantity: function () {
                 return self.getLabs().items.length;
@@ -207,7 +207,7 @@ define(['./module'], function (services) {
         this.timeMachines = {
             name: 'timeMachines',
             title: 'Time Machine',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida.',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam iaculis ut dui at gravida. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium',
             image: 'http://placehold.it/100x100',
             quantity: function () {
                 return self.getTimeMachines().items.length;
