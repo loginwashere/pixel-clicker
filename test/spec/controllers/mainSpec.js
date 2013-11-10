@@ -1,10 +1,10 @@
-define(['app'], function(App) {
+define([], function() {
     'use strict';
 
     describe('Controller: MainCtrl', function () {
 
         // load the controller's module
-        //beforeEach(module('app'));
+        beforeEach(module('app'));
 
         var MainCtrl,
             scope;

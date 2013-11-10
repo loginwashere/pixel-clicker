@@ -23,7 +23,7 @@
 })(this);
 
 require.config({
-    baseUrl: '/base/app',
+    baseUrl: '../app',
 
     paths: {
         'angular'         : '../app/bower_components/angular/angular',
