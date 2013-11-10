@@ -1,2 +1,5 @@
-'use-strict';
-angular.module('ui.bootstrap', []);
+define(['angular'], function(ng) {
+    'use-strict';
+
+    ng.module('ui.bootstrap', []);
+});
