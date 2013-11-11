@@ -8,7 +8,7 @@ define([
     describe('Service: game', function () {
 
       // load the service's module
-      beforeEach(mocks.module('app'));
+      beforeEach(module('app'));
 
       // instantiate service
       var game;

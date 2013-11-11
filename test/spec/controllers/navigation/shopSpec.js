@@ -8,7 +8,7 @@ define([
     describe('Controller: ShopCtrl', function () {
 
         // load the controller's module
-        beforeEach(mocks.module('app'));
+        beforeEach(module('app'));
 
         var ShopCtrl,
             scope;
