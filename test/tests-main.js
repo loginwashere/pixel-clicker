@@ -1,53 +1,68 @@
-/**
- * another one monkey patch to prevent "no timestamp" error
- * https://github.com/karma-runner/karma-requirejs/issues/6#issuecomment-23037725
- */
-(function (global) {
-    var fileWithoutLeadingSlash;
-    // array where all spec files will be included
-    global.tests = [];
+(function (window, require) {
+    'use strict';
+    var file, requireModules;
+    requireModules = [];
 
-    for (var file in global.__karma__.files) {
-        if (global.__karma__.files.hasOwnProperty(file)) {
-            // get rid of leading slash in file path - prevents "no timestamp" error
-            fileWithoutLeadingSlash = file.replace(/^\//, '');
-            global.__karma__.files[fileWithoutLeadingSlash] = global.__karma__.files[file];
-            delete global.__karma__.files[file];
-
-            // we get all the test files automatically and store to window.tests array
-            if (/Spec\.js$/.test(fileWithoutLeadingSlash)) {
-                global.tests.push(fileWithoutLeadingSlash);
+    for (file in window.__karma__.files) {
+        if (window.__karma__.files.hasOwnProperty(file)) {
+            if (file.substring(file.length - 7, file.length) === 'Spec.js') {
+                console.log('Added file to testing..');
+                requireModules.push(file);
             }
         }
     }
-})(this);
 
-require.config({
-    baseUrl: '../app',
+    requireModules.push('app');
+    //requireModules.push('mocks');
 
-    paths: {
-        'angular'         : '../app/bower_components/angular/angular',
-        'angular-mocks'   : '../app/bower_components/angular-mocks/angular-mocks',
-        'angular-resource': '../app/bower_components/angular-resource/angular-resource',
-        'angular-scenario': '../app/bower_components/angular-scenario/angular-scenario',
-        'domReady'        : '../app/bower_components/requirejs-domready/domReady',
-        'Source'          : '../app/scripts'
-    },
+    require({
+        baseUrl: '/base/app/scripts',
 
-    shim: {
-        'angular'         : {
-            exports: 'angular'
+        paths: {
+            'angular'         : '../bower_components/angular/angular',
+            'angular-mocks'   : '../bower_components/angular-mocks/angular-mocks',
+            'angular-resource': '../bower_components/angular-resource/angular-resource',
+            'angular-scenario': '../bower_components/angular-scenario/angular-scenario',
+            'domReady': '../bower_components/requirejs-domready/domReady',
+            'jquery': '../bower_components/jquery/jquery',
+            'masonry': '../bower_components/masonry/masonry',
+            'lodash': '../bower_components/lodash/dist/lodash',
+            'doc-ready/doc-ready': '../bower_components/doc-ready/doc-ready',
+            'get-style-property/get-style-property': '../bower_components/get-style-property/get-style-property',
+            'matches-selector/matches-selector': '../bower_components/matches-selector/matches-selector',
+            'outlayer/item': '../bower_components/outlayer/item',
+            'outlayer/outlayer': '../bower_components/outlayer/outlayer',
+            'get-size/get-size': '../bower_components/get-size/get-size',
+            'eventie/eventie': '../bower_components/eventie/eventie',
+            'eventEmitter/EventEmitter': '../bower_components/eventEmitter/EventEmitter',
+            'imagesLoaded': '../bower_components/imagesloaded/imagesloaded',
+            'ui.bootstrap': '../bower_components/angular-bootstrap/ui-bootstrap-tpls'
         },
-        'angular-mocks'   : {
-            deps: ['angular']
-        },
-        'angular-resource': {
-            deps: ['angular']
+
+        shim: {
+            'angular'         : {
+                exports: 'angular'
+            },
+            'angular-mocks'   : {
+                deps: ['angular']
+            },
+            'angular-resource': {
+                deps: ['angular']
+            },
+            'ui.bootstrap': {
+                deps: ['angular']
+            }
         }
-    },
+    }, requireModules, function () {
+        window.__karma__.start();
+    }, function (err) {
+        var failedModules = err.requireModules;
+        console.log("err", err);
 
-    // array with all spec files
-    deps: window.tests,
-
-    callback: window.__karma__.start
-});
+        if (failedModules && failedModules[0]) {
+            throw new Error("Module could not be loaded: " + failedModules);
+        } else {
+            throw new Error("unknown error:" + err);
+        }
+    });
+}(window, require));

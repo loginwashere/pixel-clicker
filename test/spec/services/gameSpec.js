@@ -1,10 +1,14 @@
-define([], function() {
+define([
+    'angular',
+    'angular-mocks',
+    'app'
+], function(angular, mocks, app) {
     'use strict';
 
     describe('Service: game', function () {
 
       // load the service's module
-      beforeEach(module('app'));
+      beforeEach(mocks.module('app'));
 
       // instantiate service
       var game;

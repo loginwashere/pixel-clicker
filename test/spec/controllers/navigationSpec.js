@@ -1,10 +1,14 @@
-define([], function() {
+define([
+    'angular',
+    'angular-mocks',
+    'app'
+], function(angular, mocks, app) {
     'use strict';
 
     describe('Controller: NavigationCtrl', function () {
 
         // load the controller's module
-        beforeEach(module('app'));
+        beforeEach(mocks.module('app'));
 
         var NavigationCtrl,
             scope;
