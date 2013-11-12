@@ -20,6 +20,22 @@ define([
             expect(!!game).toBe(true);
         });
 
+        it('should return game title', function () {
+            expect(game.getTitle()).toBe('Pixel Clicker');
+        });
 
+        it('should return number of clicks', function () {
+            expect(game.getNumberOfClicks()).toBe(0);
+        });
+
+        it('should return bigger number of clicks after click', function () {
+            var scope = {};
+            game.clickPixel(scope)();
+            expect(game.getNumberOfClicks()).toBe(1);
+        });
+
+        it('should have products', function () {
+            expect(game.getProducts().length).toBe(8);
+        });
     });
 });
