@@ -2,7 +2,7 @@ define([
     'angular',
     'angular-mocks',
     'app'
-], function(angular, mocks, app) {
+], function (angular, mocks, app) {
     'use strict';
 
     describe('Controller: AboutCtrl', function () {
