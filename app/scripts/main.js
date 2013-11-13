@@ -17,11 +17,14 @@ require.config({
         'eventEmitter/EventEmitter': '../bower_components/eventEmitter/EventEmitter',
         'imagesLoaded': '../bower_components/imagesloaded/imagesloaded',
         'ui.bootstrap': '../bower_components/angular-bootstrap/ui-bootstrap-tpls',
-        'store': '../bower_components/store/store'
+        'storejs': '../bower_components/store.js/store'
     },
 
     // angular does not support AMD out of the box, put it in a shim
     shim: {
+        'storejs': {
+            exports: 'store'
+        },
         'angular': {
             exports: 'angular'
         },
