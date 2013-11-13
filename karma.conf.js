@@ -29,6 +29,7 @@ module.exports = function (config) {
             {pattern: 'app/bower_components/eventEmitter/EventEmitter.js', included: false},
             {pattern: 'app/bower_components/imagesloaded/imagesloaded.js', included: false},
             {pattern: 'app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js', included: false},
+            {pattern: 'app/bower_components/store.js/store.js', included: false},
             {pattern: 'test/mock/**/*.js', included: false},
             {pattern: 'test/spec/**/*.js', included: false},
             {pattern: 'app/scripts/**/*.js', included: false},

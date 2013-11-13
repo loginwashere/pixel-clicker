@@ -36,10 +36,14 @@
             'eventie/eventie': '../bower_components/eventie/eventie',
             'eventEmitter/EventEmitter': '../bower_components/eventEmitter/EventEmitter',
             'imagesLoaded': '../bower_components/imagesloaded/imagesloaded',
-            'ui.bootstrap': '../bower_components/angular-bootstrap/ui-bootstrap-tpls'
+            'ui.bootstrap': '../bower_components/angular-bootstrap/ui-bootstrap-tpls',
+            'storejs': '../bower_components/store.js/store'
         },
 
         shim: {
+            'storejs': {
+                exports: 'store'
+            },
             'angular'         : {
                 exports: 'angular'
             },
